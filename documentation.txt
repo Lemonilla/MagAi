@@ -1,0 +1,67 @@
+Non-Item Item Codes
+0xF        = Flag Byte
+0x III     = id check
+0x    CC   = class check
+0x      LL = min char lvl
+
+ID table
+1   .    .    .  Bluefull
+ 1  .    .    .  Greenill
+  1 .    .    .  Oran
+   1.    .    .  Pinkal
+    .1   .    .  Purplenum
+    . 1  .    .  Redria
+    .  1 .    .  Skyly
+    .   1.    .  Viridia
+    .    .1   .  Yellowboze
+    .    . 1  .  Whitill
+
+
+class table
+1   .    . = female flag
+ 1  .    . = male flag
+  1 .    . = cast flag
+   1.    . = human flag
+    .1   . = newman flag
+    . 1  . = Hu flag
+    .  1 . = Ra flag
+    .   1. = Fo flag
+
+Stats Check Codes
+0     True
+
+1     POW > DEX && POW > MIND && level >= 35
+2     DEX > POW && DEX > MIND && level >= 35
+3     MIND > POW && MIND > DEX && level >= 35
+4     (MIND = DEX && MIND > POW) || (MIND = POW && MIND > DEX) || (POW = DEX && POW > MIND) && level >= 35
+
+5     POW > DEX && DEX >= MIND && DEF < 45 && level >= 50 && (level%5 = 0)
+6     POW > MIND && MIND > DEX && DEF < 45 && level >= 50 && (level%5 = 0)
+7     DEX > POW && POW > MIND && DEF < 45 && level >= 50 && (level%5 = 0)
+8     DEX > MIND && MIND >= POW && DEF < 45 && level >= 50 && (level%5 = 0)
+9     MIND > POW && POW >= DEX && DEF < 45 && level >= 50 && (level%5 = 0)
+10    MIND > DEX && DEX > POW && DEF < 45 && level >= 50 && (level%5 = 0)
+
+11    (POW = DEX || POW = MIND || MIND = DEX) && DEX >= MIND && DEF < 45 && level >= 50 && (level%5 = 0)
+12    (POW = DEX || POW = MIND || MIND = DEX) && MIND > DEX && DEF < 45 && level >= 50 && (level%5 = 0)
+13    (POW = DEX || POW = MIND || MIND = DEX) && POW > MIND && DEF < 45 && level >= 50 && (level%5 = 0)
+14    (POW = DEX || POW = MIND || MIND = DEX) && MIND >= POW && DEF < 45 && level >= 50 && (level%5 = 0)
+15    (POW = DEX || POW = MIND || MIND = DEX) && POW >= DEX && DEF < 45 && level >= 50 && (level%5 = 0)
+16    (POW = DEX || POW = MIND || MIND = DEX) && DEX > POW && DEF < 45 && level >= 50 && (level%5 = 0)
+
+17    POW > DEX && DEX >= MIND && DEF >= 45 && level >= 50 && (level%5 = 0)
+18    POW > MIND && MIND > DEX && DEF >= 45 && level >= 50 && (level%5 = 0)
+19    DEX > POW && POW > MIND && DEF >= 45 && level >= 50 && (level%5 = 0)
+20    DEX > MIND && MIND >= POW && DEF >= 45 && level >= 50 && (level%5 = 0)
+21    MIND > POW && POW >= DEX && DEF >= 45 && level >= 50 && (level%5 = 0)
+22    MIND > DEX && DEX > POW && DEF >= 45  && level >= 50 && (level%5 = 0)
+
+23    (POW = DEX || POW = MIND || MIND = DEX) && DEX >= MIND && DEF >= 45 && level >= 50 && (level%5 = 0)
+24    (POW = DEX || POW = MIND || MIND = DEX) && MIND > DEX && DEF >= 45 && level >= 50 && (level%5 = 0)
+25    (POW = DEX || POW = MIND || MIND = DEX) && POW > MIND && DEF >= 45 && level >= 50 && (level%5 = 0)
+26    (POW = DEX || POW = MIND || MIND = DEX) && MIND >= MIND && DEF >= 45 && level >= 50 && (level%5 = 0)
+27    (POW = DEX || POW = MIND || MIND = DEX) && DEF >= 45 && level >= 50 && (level%5 = 0)
+
+28    (DEF + POW) = (DEX + MIND) && level >= 100 && (level%5 == 0)
+29    (DEF + DEX) = (POW + MIND) && level >= 100 && (level%5 == 0)
+30    (DEF + MIND) = (POW + DEX) && level >= 100 && (level%5 == 0)
