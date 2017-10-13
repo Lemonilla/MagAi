@@ -150,6 +150,35 @@ void magManagmentInit()
     feedTables = &tables;
 }
 
+mag_t* newMag(int ppp)
+{
+    mag_t* m = malloc(sizeof(mag_t));
+    m->type = MAG;
+    m->iq = 0;
+    m->sync = 0;
+    m->levels[0] = 0;
+    m->levels[1] = 0;
+    m->levels[2] = 0;
+    m->levels[3] = 0;
+    m->percents[0] = 0;
+    m->percents[1] = 0;
+    m->percents[2] = 0;
+    m->percents[3] = 0;
+    m->photon[0] = NOPHOTON;
+    m->photon[1] = NOPHOTON;
+    m->photon[2] = NOPHOTON;
+    m->next = NULL;
+    m->history = NULL;
+
+    if (ppp) 
+    {
+        m->levels[0] = 5;
+        addHistory(0xE0000000);
+    }
+
+    return m;
+}
+
 int getTableId(int magType)
 {
     switch(magType)
@@ -234,12 +263,13 @@ int getTableId(int magType)
 
 int getItemBoost(int tableId, int itemIndex, int stat)
 {
+    // navigate the stupid feedtable design
     return (*((*((*feedTables)[tableId]))[itemIndex]))[stat];
 }
 
 mag_t* copyMag(mag_t* m)
 {
-    mag_t* copy = malloc(sizeof(mag_t));
+    mag_t* copy = newMag(FALSE);
     copy->type = m->type;
     copy->iq = m->iq;
     copy->sync = m->sync;
@@ -265,3 +295,40 @@ mag_t* copyMag(mag_t* m)
     return copy;
 }
 
+void addPhoton(mag_t* m, int pb)
+{
+    if (pb == NULL) return;
+    for (int i = 0; i < 3; i++)
+    {
+        if (m->photon[i] != 0)
+        {
+            m->photon[i] = pb;
+            return;
+        }
+    }
+    return;
+}
+
+int compareMag(mag_t* a, mag_t* b)
+{
+    return (a->type == b->type &&
+    a->levels[0] == b->levels[0] &&
+    a->levels[1] == b->levels[1] &&
+    a->levels[2] == b->levels[2] &&
+    a->levels[3] == b->levels[3] &&
+    ( a->photon[0] == b->photon[0] || b->photon[2] == NOPHOTON ) &&
+    ( a->photon[1] == b->photon[1] || b->photon[2] == NOPHOTON ) &&
+    ( a->photon[2] == b->photon[2] || b->photon[2] == NOPHOTON ));
+}
+
+void deleteMag(mag_t* m)
+{
+    history_t* tmp;
+    while(m->history != NULL)
+    {
+        tmp = m->history;
+        m->history = tmp->next;
+        free(tmp);
+    }
+    free(m);
+}

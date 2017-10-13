@@ -5,7 +5,6 @@
 #include "../h/const.h"
 #include "../e/maglist.e"
 
-extern void checkCells(mag_t* checkedMag, mag_t** toAddList);
 extern void feed(mag_t* m, mag_t** toAddList);
 
 #endif

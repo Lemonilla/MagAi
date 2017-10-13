@@ -43,6 +43,7 @@ HIDDEN void pushMag(mag_t* m, mag_t** tp)
 // abstraction to easily change between a queue and stack
 void addMag(mag_t* m, mag_t** tp)
 {
+    // change this when we decide on stack vs queue
     enqueMag(m,tp);
 }
 

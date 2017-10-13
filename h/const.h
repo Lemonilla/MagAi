@@ -1,12 +1,14 @@
 #define HIDDEN          static
+#define BUFFERSIZE      50
 
 // Photon Blasts
-#define FARLLA          0
-#define ESTLLA          1
-#define LEILLA          2
-#define GOLLA           3
-#define TWINS           4
-#define PILLA           5
+#define NOPHOTON        0
+#define FARLLA          1
+#define ESTLLA          2
+#define LEILLA          3
+#define GOLLA           4
+#define TWINS           5
+#define PILLA           6
 
 // Item Codes
 #define MONOMATE        0
@@ -97,8 +99,6 @@
 #define SEGASATURN      64
 #define DREAMCAST       65
 
-
-
 // mag cell codes
 #define CELLOFMAG502        0x030C00
 #define CELLOFMAG213        0x030C01
@@ -134,3 +134,51 @@
 #define CELLOFMAG0506       0x03180E
 #define CELLOFMAG0507       0x03180F
 #define ASHURAMAGCELL       0x031810
+
+// Evolution Groups
+#define Allg        0xFFFC0700
+#define HUgA        0xF0F80400
+#define HUgB        0xFF040400
+#define HUgC        0xFFFC0400
+#define RAgA        0xF0F80200
+#define RAgB        0xFF040200
+#define RAgC        0xFFFC0200
+#define FOgA        0xF0F80100
+#define FOgB        0xFF040100
+#define FOgC        0xFFFC0100
+#define HUgM        0xF0004400
+#define HUgF        0xF0008400
+#define RAgM        0xF0004200
+#define RAgF        0xF0008200
+#define FOgM        0xF0004100
+#define FOgF        0xF0008100
+#define T4gA        0xF1280000
+#define T4gB        0xF8540000
+#define T4gC        0xF6800000
+
+
+#define BLUEFULL    0x08000000
+#define GREENILL    0x04000000
+#define ORAN        0x02000000
+#define PINKAL      0x01000000
+#define PURPLENUM   0x00800000
+#define REDRIA      0x00400000
+#define SKYLY       0x00200000
+#define VIRIDIA     0x00100000
+#define YELLOWBOZE  0x00080000
+#define WHITILL     0x00040000
+
+#define LEVELSEC    0x000000FF
+
+#define HUMAR       0x00005400
+#define HUNEWEARL   0x00008C00
+#define HUCAST      0x00006400
+#define HUCASEAL    0x0000A400
+#define RAMAR       0x00005200
+#define RAMARL      0x00009200
+#define RACAST      0x00006200
+#define RACASEAL    0x0000A200
+#define FOMAR       0x00005100
+#define FOMARL      0x00009100
+#define FONEWM      0x00004900
+#define FONEWEARL   0x00008900
