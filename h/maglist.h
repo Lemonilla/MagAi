@@ -3,7 +3,7 @@
 
 #include "../h/types.h"
 #include "../h/const.h"
-#include "../e/magManagment.e"
+#include "../h/magManagment.h"
 
 // abstraction to easily change between a queue and stack
 void addMag(mag_t* m, mag_t** tp);

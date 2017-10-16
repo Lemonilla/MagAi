@@ -4,9 +4,8 @@
 
 #include "../h/types.h"
 #include "../h/const.h"
-#include "../e/feed.e"
-#include "../e/maglist.e"
-#include "../e/magManagment.e"
+#include "../h/maglist.h"
+#include "../h/magManagment.h"
 
 HIDDEN int feedableItems[11] = {
     MONOMATE,

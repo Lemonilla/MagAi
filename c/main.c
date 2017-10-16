@@ -2,9 +2,9 @@
 
 #include "../h/types.h"
 #include "../h/const.h"
-#include "../e/feed.e"
-#include "../e/maglist.e"
-#include "../e/magManagment.e"
+#include "../h/feed.h"
+#include "../h/maglist.h"
+#include "../h/magManagment.h"
 
 
 HIDDEN char buffer[BUFFERSIZE];
@@ -306,8 +306,9 @@ int main()
         // this triggers feed, evolve, and checkCells
         // and appends them all to toCheck
         feed(m, toCheck);
-            //evolve
-            //checkCells
+            //evolve (done in feed())
+            //checkCells (done in feed())
+        deleteMag(working);
     } 
     while (!compareMag(working,final) && working != NULL);
 

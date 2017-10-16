@@ -1,3 +1,6 @@
+#ifndef CONST
+#define CONST
+
 #define HIDDEN          static
 #define BUFFERSIZE      50
 
@@ -182,3 +185,5 @@
 #define FOMARL      0x00009100
 #define FONEWM      0x00004900
 #define FONEWEARL   0x00008900
+
+#endif

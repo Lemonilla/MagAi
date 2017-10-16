@@ -1,6 +1,5 @@
 #include "../h/const.h"
 #include "../h/types.h"
-#include "../e/maglist.e"
 
 
 /****************** PRIVATE ******************/
